@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_quiz/models/button_file.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -10,31 +11,27 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       appBar: AppBar(
-        title: Text('Faviourate Quiz '),
+        title: Text('Faviourate Quiz'),
       ),
+
       body: Center(
         child: Column(
+
           children: [
-            Text(
-              'Whats Your Faviourate Color',
-              style: TextStyle(fontSize: 24),
-              textAlign: TextAlign.center,
-            ),
             Padding(
-              padding: const EdgeInsets.only(top: 350),
-              child: Container(
-                margin: EdgeInsets.all(20.0),
-                width: MediaQuery.of(context).size.width,
-                child: ElevatedButton(
-                    onPressed: () => print('adnan'),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 100),
-                      child: Text('Next Question'),
-                    )),
+              padding: const EdgeInsets.all(8.0),
+              child: Text("What\'s Your Faviourate Color ",
+              style: TextStyle(fontSize: 20),
+                textAlign: TextAlign.center,
               ),
-            )
+            ),
+
+            Button_page(btntext: 'Black'),
+            Button_page(btntext: 'Red'),
+            Button_page(btntext: 'Green'),
+            Button_page(btntext: 'White'),
           ],
         ),
       ),
